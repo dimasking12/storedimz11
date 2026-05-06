@@ -1,0 +1,28 @@
+# Environment & secrets
+.env
+
+# Composer
+/vendor/
+
+# CI4 writable runtime
+/writable/cache/*
+/writable/debugbar/*
+/writable/logs/*
+/writable/session/*
+/writable/uploads/*
+!/writable/cache/.gitkeep
+!/writable/debugbar/.gitkeep
+!/writable/logs/.gitkeep
+!/writable/session/.gitkeep
+!/writable/uploads/.gitkeep
+
+# Editor / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# PHPUnit
+/phpunit.xml
+/.phpunit.result.cache

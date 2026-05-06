@@ -1,0 +1,40 @@
+# =====================================================================
+# DIMZSTORE - root .gitignore
+# =====================================================================
+
+# Logs (jangan ikut commit; sering berisi data sensitif)
+*.log
+error_log.txt
+bot_log.txt
+web_store_debug.log
+
+# Composer & vendor (CI4 di-install via composer di /ci4/)
+ci4/vendor/
+vendor/
+
+# Environment files (RAHASIA - jangan pernah commit!)
+.env
+ci4/.env
+
+# CI4 writable runtime
+ci4/writable/cache/*
+ci4/writable/debugbar/*
+ci4/writable/logs/*
+ci4/writable/session/*
+ci4/writable/uploads/*
+!ci4/writable/cache/.gitkeep
+!ci4/writable/debugbar/.gitkeep
+!ci4/writable/logs/.gitkeep
+!ci4/writable/session/.gitkeep
+!ci4/writable/uploads/.gitkeep
+
+# Editor / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*~

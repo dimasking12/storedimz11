@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+/*
+ * DIMZSTORE - CodeIgniter 4 CLI runner
+ * Pemakaian: php spark <command>
+ * Cont: php spark serve, php spark routes, php spark migrate
+ */
+
+define('SPARKED', true);
+
+$pathsPath = __DIR__ . '/app/Config/Paths.php';
+require realpath($pathsPath) ?: $pathsPath;
+
+$paths = new Config\Paths();
+require rtrim($paths->systemDirectory, '\\/ ') . DIRECTORY_SEPARATOR . 'bootstrap.php';
+
+exit(\CodeIgniter\CLI\Console::create()->run());

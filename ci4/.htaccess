@@ -1,0 +1,13 @@
+# Redirect semua request /ci4/* ke /ci4/public/* supaya
+# struktur internal CI4 (app/, system/, vendor/) tidak bisa diakses.
+# Ini berguna saat docroot menunjuk ke /botdimas/ (root project lama).
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} !^.*/ci4/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Blokir akses langsung ke file penting
+<FilesMatch "^(\.env|composer\.(json|lock)|spark|README\.md)$">
+    Require all denied
+</FilesMatch>
