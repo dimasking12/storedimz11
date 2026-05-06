@@ -1,0 +1,13 @@
+# DIMZSTORE - Routing Engine
+Options -MultiViews
+RewriteEngine On
+
+# 1. Jika akses root, arahkan ke dashboard
+RewriteRule ^$ dashboard.php [L]
+
+# 2. Map URL bersih ke file .php
+# Contoh: /dashboard -> dashboard.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
